@@ -117,7 +117,8 @@ jobs:
     - name: Clone device tree
       run: |
         git clone https://${{ secrets.G_TOKEN }}@github.com/shazuxd7/device_xiaomi_fleur-twrp -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
-      working-directory: ${{ steps.pwd.outputs.workspace-folder }}
+        git clone https://${{ secrets.G_TOKEN }}@github.com/shazuxd7/vendor_xiaomi_beanpod-common -b android-12.1 ./${{ github.event.inputs.COMMON_PATH }}
+      working-directory: ${{ steps.pwd.outputs.workspace-folder }} 
 
     - name: Clone common tree
       if: |
